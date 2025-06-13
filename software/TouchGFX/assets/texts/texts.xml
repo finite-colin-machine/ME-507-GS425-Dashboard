@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.25.0">
+  <Languages>
+    <Language Id="GB" />
+  </Languages>
+  <Texts>
+    <TextGroup Id="SpeedandRPM">
+      <Text Id="ResourceId2" Alignment="Left" TypographyId="Gear_typographie">
+        <Translation Language="GB">New Text</Translation>
+      </Text>
+    </TextGroup>
+    <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_VBEE" Alignment="Left" TypographyId="large2">
+        <Translation Language="GB">999</Translation>
+      </Text>
+      <Text Id="__SingleUse_PGGC" Alignment="Left" TypographyId="large2">
+        <Translation Language="GB">&lt;distance&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_OJJL" Alignment="Left" TypographyId="mediumTemp">
+        <Translation Language="GB">AUTO&#10;CHOKE</Translation>
+      </Text>
+      <Text Id="__SingleUse_22IR" Alignment="Left" TypographyId="mediumTemp">
+        <Translation Language="GB">1000</Translation>
+      </Text>
+      <Text Id="__SingleUse_SCKZ" Alignment="Left" TypographyId="mediumTemp">
+        <Translation Language="GB">13</Translation>
+      </Text>
+      <Text Id="__SingleUse_SWQW" Alignment="Left" TypographyId="mediumTemp">
+        <Translation Language="GB">&lt;value&gt; Volts</Translation>
+      </Text>
+      <Text Id="__SingleUse_9BYR" Alignment="Left" TypographyId="mediumTemp">
+        <Translation Language="GB">&lt;value&gt; Miles</Translation>
+      </Text>
+      <Text Id="__SingleUse_0M55" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">X100</Translation>
+      </Text>
+      <Text Id="__SingleUse_WEF4" Alignment="Left" TypographyId="SmallSpeed">
+        <Translation Language="GB">120</Translation>
+      </Text>
+      <Text Id="__SingleUse_VAXZ" Alignment="Left" TypographyId="SmallSpeed">
+        <Translation Language="GB">100</Translation>
+      </Text>
+      <Text Id="__SingleUse_LYL3" Alignment="Left" TypographyId="SmallSpeed">
+        <Translation Language="GB">80&#10;</Translation>
+      </Text>
+      <Text Id="__SingleUse_4JRJ" Alignment="Left" TypographyId="SmallSpeed">
+        <Translation Language="GB">60</Translation>
+      </Text>
+      <Text Id="__SingleUse_YYIA" Alignment="Left" TypographyId="SmallSpeed">
+        <Translation Language="GB">40</Translation>
+      </Text>
+      <Text Id="__SingleUse_675C" Alignment="Left" TypographyId="SmallSpeed">
+        <Translation Language="GB">20</Translation>
+      </Text>
+      <Text Id="__SingleUse_XJG4" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">RPM</Translation>
+      </Text>
+      <Text Id="__SingleUse_PPKY" Alignment="Left" TypographyId="SmallSpeed">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="__SingleUse_5WZ9" Alignment="Center" TypographyId="Speed_RPM">
+        <Translation Language="GB">&lt;value&gt; </Translation>
+      </Text>
+      <Text Id="__SingleUse_1W6M" Alignment="Left" TypographyId="mediumTemp">
+        <Translation Language="GB">000 </Translation>
+      </Text>
+      <Text Id="__SingleUse_ND4X" Alignment="Left" TypographyId="mediumTemp">
+        <Translation Language="GB">&lt;value&gt;°F</Translation>
+      </Text>
+      <Text Id="__SingleUse_RBJZ" Alignment="Left" TypographyId="SmallSpeed">
+        <Translation Language="GB">200</Translation>
+      </Text>
+      <Text Id="__SingleUse_9LTW" Alignment="Left" TypographyId="SmallSpeed">
+        <Translation Language="GB">150</Translation>
+      </Text>
+      <Text Id="__SingleUse_U4OO" Alignment="Left" TypographyId="SmallSpeed">
+        <Translation Language="GB">100</Translation>
+      </Text>
+      <Text Id="__SingleUse_IBPW" Alignment="Left" TypographyId="SmallSpeed">
+        <Translation Language="GB">50</Translation>
+      </Text>
+      <Text Id="__SingleUse_YWM9" Alignment="Left" TypographyId="SmallSpeed">
+        <Translation Language="GB">300</Translation>
+      </Text>
+      <Text Id="__SingleUse_FCZ1" Alignment="Left" TypographyId="SmallSpeed">
+        <Translation Language="GB">250</Translation>
+      </Text>
+      <Text Id="__SingleUse_IWLS" Alignment="Left" TypographyId="SmallSpeed">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_1GGO" Alignment="Left" TypographyId="SmallSpeed">
+        <Translation Language="GB">000</Translation>
+      </Text>
+      <Text Id="__SingleUse_RYI8" Alignment="Left" TypographyId="SmallSpeed">
+        <Translation Language="GB">100</Translation>
+      </Text>
+      <Text Id="__SingleUse_GCZ4" Alignment="Left" TypographyId="SmallSpeed">
+        <Translation Language="GB">80&#10;</Translation>
+      </Text>
+      <Text Id="__SingleUse_OSAJ" Alignment="Left" TypographyId="SmallSpeed">
+        <Translation Language="GB">60</Translation>
+      </Text>
+      <Text Id="__SingleUse_Z7FO" Alignment="Left" TypographyId="SmallSpeed">
+        <Translation Language="GB">40</Translation>
+      </Text>
+      <Text Id="__SingleUse_HVIY" Alignment="Left" TypographyId="SmallSpeed">
+        <Translation Language="GB">20</Translation>
+      </Text>
+      <Text Id="__SingleUse_KHT6" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">MPH</Translation>
+      </Text>
+      <Text Id="__SingleUse_VZUR" Alignment="Center" TypographyId="Speed_RPM">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_RFQD" Alignment="Left" TypographyId="Speed_RPM">
+        <Translation Language="GB">N</Translation>
+      </Text>
+      <Text Id="__SingleUse_Q34P" Alignment="Left" TypographyId="Speed_RPM">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+    </TextGroup>
+  </Texts>
+  <Typographies>
+    <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="N" WildcardCharacterRanges="0-9" />
+    <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Gear_typographie" Font="verdana.ttf" Size="75" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="N" WildcardCharacterRanges="0-9" />
+    <Typography Id="Speed_RPM" Font="OCRAEXT.TTF" Size="100" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="~" WildcardCharacters="N" WildcardCharacterRanges="0-9" />
+    <Typography Id="SmallSpeed" Font="OCRAEXT.TTF" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="mediumTemp" Font="OCRAEXT.TTF" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9" />
+    <Typography Id="large2" Font="OCRAEXT.TTF" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0-9" />
+  </Typographies>
+</TextDatabase>

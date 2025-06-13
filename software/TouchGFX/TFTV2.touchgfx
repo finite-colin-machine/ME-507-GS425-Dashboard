@@ -1,0 +1,931 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "screen",
+        "CanvasBufferSize": 9000,
+        "Components": [
+          {
+            "Type": "TextArea",
+            "Name": "odoText",
+            "X": 258,
+            "Y": 240,
+            "Width": 72,
+            "Height": 40,
+            "TextId": "__SingleUse_PGGC",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 217
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_VBEE",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "gearText",
+            "X": 268,
+            "Y": 54,
+            "Width": 63,
+            "Height": 117,
+            "TextId": "__SingleUse_Q34P",
+            "TextRotation": "0",
+            "Color": {
+              "Green": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_RFQD",
+              "UseBuffer": true,
+              "BufferSize": 4
+            }
+          },
+          {
+            "Type": "BoxProgress",
+            "Name": "gasProgress",
+            "X": 25,
+            "Y": 308,
+            "Width": 200,
+            "Height": 18,
+            "Color": {
+              "Red": 254,
+              "Green": 189,
+              "Blue": 23
+            },
+            "Direction": "Right",
+            "Preset": "alternate_theme\\presets\\boxprogress\\thick\\small_action.json",
+            "FileNameBackground": "__generated\\alternate_theme_images_widgets_boxprogress_thick_small.png",
+            "IndicatorPositionWidth": 200,
+            "IndicatorPositionHeight": 18,
+            "ProgressRangeMax": 1000,
+            "ProgressInitialValue": 1000
+          },
+          {
+            "Type": "BoxProgress",
+            "Name": "voltProgress",
+            "X": 375,
+            "Y": 308,
+            "Width": 200,
+            "Height": 18,
+            "Color": {
+              "Red": 255
+            },
+            "Direction": "Right",
+            "FileNameBackground": "__generated\\alternate_theme_images_widgets_boxprogress_thick_small.png",
+            "IndicatorPositionWidth": 200,
+            "IndicatorPositionHeight": 18,
+            "ProgressRangeMax": 16,
+            "ProgressInitialValue": 16
+          },
+          {
+            "Type": "TextArea",
+            "Name": "gasText",
+            "X": 65,
+            "Y": 287,
+            "Width": 120,
+            "Height": 20,
+            "TextId": "__SingleUse_9BYR",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_22IR",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "voltText",
+            "X": 415,
+            "Y": 287,
+            "Width": 96,
+            "Height": 20,
+            "TextId": "__SingleUse_SWQW",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_SCKZ",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "speedGaugeContainer1",
+            "X": 12,
+            "Y": 43,
+            "Width": 250,
+            "Height": 217,
+            "CustomContainerDefinitionName": "speedGaugeContainer"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "tempGaugeContainer1",
+            "X": 62,
+            "Y": 171,
+            "Width": 458,
+            "Height": 89,
+            "CustomContainerDefinitionName": "tempGaugeContainer"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "tacGaugeContainer1",
+            "X": 339,
+            "Y": 43,
+            "Width": 250,
+            "Height": 217,
+            "CustomContainerDefinitionName": "tacGaugeContainer"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "autoChoke",
+            "X": 270,
+            "Y": 298,
+            "Width": 60,
+            "Height": 40,
+            "TextId": "__SingleUse_OJJL",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255
+            },
+            "AutoSize": true
+          }
+        ],
+        "Interactions": []
+      }
+    ],
+    "CustomContainerDefinitions": [
+      {
+        "Name": "speedGaugeContainer",
+        "X": 41,
+        "Y": 20,
+        "Width": 250,
+        "Height": 217,
+        "Components": [
+          {
+            "Type": "BoxProgress",
+            "Name": "speedBar7",
+            "X": 56,
+            "Y": 16,
+            "Width": 282,
+            "Height": 282,
+            "Color": {
+              "Green": 255
+            },
+            "Direction": "Right",
+            "FileNameBackground": "Blank PNG Med.png",
+            "IndicatorPositionX": 6,
+            "IndicatorPositionY": 10,
+            "IndicatorPositionWidth": 170,
+            "IndicatorPositionHeight": 10,
+            "ProgressRangeMax": 170,
+            "ProgressInitialValue": 170
+          },
+          {
+            "Type": "CircleProgress",
+            "Name": "speedBar6",
+            "X": 39,
+            "Y": 15,
+            "Width": 50,
+            "Height": 50,
+            "Color": {
+              "Green": 255
+            },
+            "CenterX": 23.3,
+            "CenterY": 25.2,
+            "Radius": 10.0,
+            "LineWidth": 9.7,
+            "StartAngle": -90.0,
+            "CapPrecision": "Butt",
+            "FileNameBackground": "Blank PNG 50.png",
+            "ProgressRangeMax": 14,
+            "ProgressInitialValue": 14
+          },
+          {
+            "Type": "BoxProgress",
+            "Name": "speedBar5",
+            "X": -52,
+            "Y": -34,
+            "Width": 282,
+            "Height": 282,
+            "Color": {
+              "Green": 255
+            },
+            "Direction": "Up",
+            "FileNameBackground": "Blank PNG Med.png",
+            "IndicatorPositionX": 100,
+            "IndicatorPositionY": 72,
+            "IndicatorPositionWidth": 10,
+            "IndicatorPositionHeight": 100,
+            "ProgressRangeMax": 100,
+            "ProgressInitialValue": 100
+          },
+          {
+            "Type": "CircleProgress",
+            "Name": "speedBar4",
+            "X": 24,
+            "Y": 122,
+            "Width": 50,
+            "Height": 50,
+            "Color": {
+              "Green": 255
+            },
+            "CenterX": 19.0,
+            "CenterY": 16.0,
+            "Radius": 10.0,
+            "LineWidth": 9.7,
+            "StartAngle": 270.0,
+            "EndAngle": 90.0,
+            "CapPrecision": "Butt",
+            "FileNameBackground": "Blank PNG 50.png",
+            "ProgressRangeMax": 30,
+            "ProgressInitialValue": 30
+          },
+          {
+            "Type": "BoxProgress",
+            "Name": "speedBar3",
+            "X": 24,
+            "Y": 115,
+            "Width": 50,
+            "Height": 50,
+            "Color": {
+              "Green": 255
+            },
+            "Direction": "Down",
+            "FileNameBackground": "Blank PNG 50.png",
+            "IndicatorPositionX": 4,
+            "IndicatorPositionY": 3,
+            "IndicatorPositionWidth": 10,
+            "IndicatorPositionHeight": 20,
+            "ProgressRangeMax": 20,
+            "ProgressInitialValue": 20
+          },
+          {
+            "Type": "CircleProgress",
+            "Name": "speedBar2",
+            "X": 6,
+            "Y": 97,
+            "Width": 50,
+            "Height": 50,
+            "Color": {
+              "Green": 255
+            },
+            "CenterX": 17.0,
+            "CenterY": 22.1,
+            "Radius": 10.0,
+            "LineWidth": 9.7,
+            "EndAngle": 90.0,
+            "CapPrecision": "Butt",
+            "FileNameBackground": "Blank PNG 50.png",
+            "ProgressRangeMax": 14,
+            "ProgressInitialValue": 14
+          },
+          {
+            "Type": "BoxProgress",
+            "Name": "speedBar1",
+            "X": -11,
+            "Y": 97,
+            "Width": 50,
+            "Height": 50,
+            "Color": {
+              "Green": 255
+            },
+            "Direction": "Right",
+            "FileNameBackground": "Blank PNG 50.png",
+            "IndicatorPositionX": 15,
+            "IndicatorPositionY": 7,
+            "IndicatorPositionWidth": 20,
+            "IndicatorPositionHeight": 10,
+            "ProgressRangeMax": 20,
+            "ProgressInitialValue": 20
+          },
+          {
+            "Type": "TextArea",
+            "Name": "speedTextDyn",
+            "X": 48,
+            "Y": 22,
+            "Width": 210,
+            "Height": 125,
+            "TextId": "__SingleUse_VZUR",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_1GGO",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "MPH",
+            "X": 193,
+            "Y": 128,
+            "Width": 44,
+            "Height": 20,
+            "TextId": "__SingleUse_KHT6",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "_20",
+            "X": 37,
+            "Y": 130,
+            "Width": 12,
+            "Height": 10,
+            "TextId": "__SingleUse_HVIY",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "_40",
+            "X": 36,
+            "Y": 65,
+            "Width": 12,
+            "Height": 10,
+            "TextId": "__SingleUse_Z7FO",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "_60",
+            "X": 68,
+            "Y": 15,
+            "Width": 12,
+            "Height": 10,
+            "TextId": "__SingleUse_OSAJ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "_80",
+            "X": 135,
+            "Y": 15,
+            "Width": 18,
+            "Height": 20,
+            "TextId": "__SingleUse_GCZ4",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "_100",
+            "X": 215,
+            "Y": 15,
+            "Width": 18,
+            "Height": 10,
+            "TextId": "__SingleUse_RYI8",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "tempGaugeContainer",
+        "X": 60,
+        "Y": 88,
+        "Width": 458,
+        "Height": 89,
+        "Components": [
+          {
+            "Type": "ImageProgress",
+            "Name": "tempProgress",
+            "X": 90,
+            "Y": 43,
+            "Width": 300,
+            "Height": 18,
+            "FileNameProgress": "Temp Gauge.png",
+            "AnchorAtZero": true,
+            "Direction": "Right",
+            "FileNameBackground": "__generated\\alternate_theme_images_widgets_imageprogress_plain_thick_medium.png",
+            "IndicatorPositionWidth": 300,
+            "IndicatorPositionHeight": 18,
+            "ProgressRangeMax": 300,
+            "ProgressRangeSteps": 300,
+            "ProgressInitialValue": 300
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 90,
+            "Y": 32,
+            "Width": 6,
+            "Height": 10,
+            "TextId": "__SingleUse_IWLS",
+            "TextRotation": "0",
+            "Color": {
+              "Green": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_2",
+            "X": 125,
+            "Y": 32,
+            "Width": 12,
+            "Height": 10,
+            "TextId": "__SingleUse_IBPW",
+            "TextRotation": "0",
+            "Color": {
+              "Green": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_2_1",
+            "X": 170,
+            "Y": 32,
+            "Width": 18,
+            "Height": 10,
+            "TextId": "__SingleUse_U4OO",
+            "TextRotation": "0",
+            "Color": {
+              "Green": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_2_1_1",
+            "X": 222,
+            "Y": 32,
+            "Width": 18,
+            "Height": 10,
+            "TextId": "__SingleUse_9LTW",
+            "TextRotation": "0",
+            "Color": {
+              "Green": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_2_1_1_1",
+            "X": 272,
+            "Y": 33,
+            "Width": 18,
+            "Height": 10,
+            "TextId": "__SingleUse_RBJZ",
+            "TextRotation": "0",
+            "Color": {
+              "Green": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1",
+            "X": 323,
+            "Y": 32,
+            "Width": 18,
+            "Height": 10,
+            "TextId": "__SingleUse_FCZ1",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1_1_1",
+            "X": 372,
+            "Y": 33,
+            "Width": 18,
+            "Height": 10,
+            "TextId": "__SingleUse_YWM9",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tempText",
+            "X": 210,
+            "Y": 39,
+            "Width": 72,
+            "Height": 20,
+            "TextId": "__SingleUse_ND4X",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_1W6M",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "tacGaugeContainer",
+        "X": 156,
+        "Y": 68,
+        "Width": 250,
+        "Height": 217,
+        "Components": [
+          {
+            "Type": "BoxProgress",
+            "Name": "tacBar7",
+            "X": -95,
+            "Y": 15,
+            "Width": 282,
+            "Height": 282,
+            "Color": {
+              "Green": 255
+            },
+            "Direction": "Left",
+            "FileNameBackground": "Blank PNG Med.png",
+            "IndicatorPositionX": 32,
+            "IndicatorPositionY": 10,
+            "IndicatorPositionWidth": 250,
+            "IndicatorPositionHeight": 10,
+            "ProgressRangeMin": 198,
+            "ProgressRangeMax": 368,
+            "ProgressInitialValue": 368
+          },
+          {
+            "Type": "CircleProgress",
+            "Name": "tacBar6",
+            "X": 162,
+            "Y": 15,
+            "Width": 50,
+            "Height": 50,
+            "Color": {
+              "Green": 255
+            },
+            "CenterX": 23.3,
+            "CenterY": 25.2,
+            "Radius": 10.0,
+            "LineWidth": 9.7,
+            "StartAngle": 90.0,
+            "CapPrecision": "Butt",
+            "FileNameBackground": "Blank PNG 50.png",
+            "ProgressRangeMin": 184,
+            "ProgressRangeMax": 198,
+            "ProgressInitialValue": 198
+          },
+          {
+            "Type": "BoxProgress",
+            "Name": "tacBar5",
+            "X": 91,
+            "Y": -34,
+            "Width": 282,
+            "Height": 282,
+            "Color": {
+              "Green": 255
+            },
+            "Direction": "Up",
+            "FileNameBackground": "Blank PNG Med.png",
+            "IndicatorPositionX": 100,
+            "IndicatorPositionY": 72,
+            "IndicatorPositionWidth": 10,
+            "IndicatorPositionHeight": 100,
+            "ProgressRangeMin": 84,
+            "ProgressRangeMax": 184,
+            "ProgressInitialValue": 184
+          },
+          {
+            "Type": "CircleProgress",
+            "Name": "tacBar4",
+            "X": 187,
+            "Y": 122,
+            "Width": 50,
+            "Height": 50,
+            "Color": {
+              "Green": 255
+            },
+            "CenterX": 19.0,
+            "CenterY": 16.0,
+            "Radius": 10.0,
+            "LineWidth": 9.7,
+            "StartAngle": 90.0,
+            "EndAngle": 270.0,
+            "CapPrecision": "Butt",
+            "FileNameBackground": "Blank PNG 50.png",
+            "ProgressRangeMin": 54,
+            "ProgressRangeMax": 84,
+            "ProgressInitialValue": 84
+          },
+          {
+            "Type": "BoxProgress",
+            "Name": "tacBar3",
+            "X": 207,
+            "Y": 115,
+            "Width": 50,
+            "Height": 50,
+            "Color": {
+              "Green": 255
+            },
+            "Direction": "Down",
+            "FileNameBackground": "Blank PNG 50.png",
+            "IndicatorPositionX": 4,
+            "IndicatorPositionY": 3,
+            "IndicatorPositionWidth": 10,
+            "IndicatorPositionHeight": 20,
+            "ProgressRangeMin": 34,
+            "ProgressRangeMax": 54,
+            "ProgressInitialValue": 54
+          },
+          {
+            "Type": "CircleProgress",
+            "Name": "tacBar2",
+            "X": 209,
+            "Y": 97,
+            "Width": 50,
+            "Height": 50,
+            "Color": {
+              "Green": 255
+            },
+            "CenterX": 17.0,
+            "CenterY": 22.1,
+            "Radius": 10.0,
+            "LineWidth": 9.7,
+            "EndAngle": -90.0,
+            "CapPrecision": "Butt",
+            "FileNameBackground": "Blank PNG 50.png",
+            "ProgressRangeMin": 20,
+            "ProgressRangeMax": 34,
+            "ProgressInitialValue": 34
+          },
+          {
+            "Type": "BoxProgress",
+            "Name": "tacBar1",
+            "X": 211,
+            "Y": 97,
+            "Width": 50,
+            "Height": 50,
+            "Color": {
+              "Green": 255
+            },
+            "Direction": "Left",
+            "FileNameBackground": "Blank PNG 50.png",
+            "IndicatorPositionX": 15,
+            "IndicatorPositionY": 7,
+            "IndicatorPositionWidth": 20,
+            "IndicatorPositionHeight": 10,
+            "ProgressRangeMax": 20,
+            "ProgressInitialValue": 20
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tacTextDyn",
+            "X": -5,
+            "Y": 22,
+            "Width": 210,
+            "Height": 125,
+            "TextId": "__SingleUse_5WZ9",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "__SingleUse_PPKY",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "RPM",
+            "X": 20,
+            "Y": 127,
+            "Width": 43,
+            "Height": 20,
+            "TextId": "__SingleUse_XJG4",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "RPM_1",
+            "X": 134,
+            "Y": 100,
+            "Width": 53,
+            "Height": 20,
+            "TextId": "__SingleUse_0M55",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "_20",
+            "X": 200,
+            "Y": 130,
+            "Width": 12,
+            "Height": 10,
+            "TextId": "__SingleUse_675C",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "_40",
+            "X": 200,
+            "Y": 79,
+            "Width": 12,
+            "Height": 10,
+            "TextId": "__SingleUse_YYIA",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "_60",
+            "X": 201,
+            "Y": 30,
+            "Width": 12,
+            "Height": 10,
+            "TextId": "__SingleUse_4JRJ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "_80",
+            "X": 144,
+            "Y": 15,
+            "Width": 18,
+            "Height": 20,
+            "TextId": "__SingleUse_LYL3",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "_100",
+            "X": 82,
+            "Y": 15,
+            "Width": 18,
+            "Height": 10,
+            "TextId": "__SingleUse_VAXZ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "_100_1",
+            "X": 20,
+            "Y": 15,
+            "Width": 18,
+            "Height": 10,
+            "TextId": "__SingleUse_WEF4",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          }
+        ],
+        "Interactions": []
+      }
+    ],
+    "Name": "MyApplication",
+    "Resolution": {
+      "Width": 600,
+      "Height": 380
+    },
+    "SelectedColorDepth": 8,
+    "StartupScreenName": "screen",
+    "SelectedStartupLanguage": "GB",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      8
+    ],
+    "AvailableLCDs": {
+      "8": "LCD8bpp_RGBA2222"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 600,
+        "Height": 380
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD8bpp_RGBA2222": {
+        "Id": "LCD8bpp_RGBA",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Landscape",
+    "Family": "STM32F7",
+    "SubFamily": "STM32F7x6",
+    "Toolchain": "STM32CubeIDE",
+    "Platform": "m7",
+    "ProjectFile": "../TFTV2.ioc",
+    "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
+    "OptionalComponents": [],
+    "AdditionalFeatures": []
+  },
+  "Version": "4.25.0"
+}

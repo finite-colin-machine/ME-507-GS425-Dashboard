@@ -1,0 +1,93 @@
+/**
+@page gs425_dashboard GS425 Dashboard
+
+@section intro Introduction
+
+The GS425 Dashboard is a term project completed for Cal Poly ME-507, Mechanical Control System Design, during Spring 2025. The dashboard was made for a Suzuki GS425 and the highlights include a custom PCB with STM32 microcontroller, color display, and automatic choke control based on engine temperature. The dashboard can display information including vehicle speed, engine speed, engine temperature, distance traveled, headlight status, and turn light status. The code is written in C++ and C, and the MCU was configured and programed using the STM32CubeIDE. A complete repository containing the code, PCB, and CAD files is posted <a href="https://github.com/finite-colin-machine/ME-507-GS425-Dashboard">here</a>. Figure 1 is a picture of the completed dashboard, and Figures 2 and 3 are images of the dashboard CAD.
+
+\image html dash_installed.jpg \"Figure 1: GS425 Dashboard installed on motorcycle\"
+
+\image html dash_front.png \"Figure 2: Dashboard front\"
+
+\image html dash_back.png \"Figure 3: Dashboard back\"
+
+@section demo Demonstration
+
+This <a href="https://www.youtube.com/embed/0GIfdtyXV7U">video</a> shows the functional dashboard in action.
+
+@section hardware Hardware
+
+@subsection pcb PCB
+
+The heart of the dashboard is a custom four-layer PCB controlled by an STM32F746 microcontroller. The PCB was designed in Fusion360 and ordered mostly assembled from JLCPCB. The PCB connects to the existing motorcycle wire harness for 12V power from the battery and digital inputs like the headlight status, turn indicators, and current gear. The 12V source is converted to 5V with a switching regulator for mid-voltage sensor and actuator power and further down to 3.3V with an LDO regulator to power the MCU. The PCB includes an unused I2C header for connecting additional sensors or actuators. Figure 4 is an image of the PCB.
+
+\image html PCB.png \"Figure 4: Custom PCB\"
+
+@subsection actuators Actuators
+
+The dashboard has an 800x480 pixel RBG TFT LCD display with a custom graphics design to display bike information. Stand-alone LEDs are used to indicate the status of additional information like the turn signals. The PCB has a motor driver to power a 5V DC motor with PWM used to adjust the choke during automatic control. The motor has a 1:298 gear ratio and maximum torque of 1.1 N-cm to hold the choke in place. See the Future Improvements section for a discussion on necessary motor improvements. Figures 5 and 6 are pictures of the choke control hardware showing the motor mount and belt system to turn the carburetor shaft.
+
+\image html choke_control_front.png \"Figure 5: Choke control hardware front\"
+
+\image html choke_control_back.png \"Figure 6: Choke control hardware back\"
+
+@subsection sensors Sensors
+
+The motor has a quadrature encoder to keep track of position, direction and speed. Wheel speed is measured using a single hall effect sensor triggered by a rotating cable attached to the front wheel. Engine speed is measured with a circuit that steps down voltage pulses from the ignition to be monitored by the MCU. Engine temperature is measured using a Type-K thermocouple attached to a MAX6675 thermocouple amplifier.
+
+@subsection design Mechanical Design
+
+The display attaches to the PCB with standoffs, and the PCB attaches to a two-part 3D printed case with more standoffs. The front of the case has an acrylic cover that was painted with a stencil to show the display and indicator LEDs. 3D printed tunnels direct the light from the LEDs to the acrylic cover. The front of the dashboard has two toggle switches and two push buttons to interact with. The front of the dashboard includes a hole to mount over the ignition switch. The back of the dashboard has holes to plug into the board. One connector attaches to the existing wiring harness and the other is used primarily for the choke control sensors and actuators. A gear on the motor shaft spins a matching gear on the choke shaft with a belt. The motor attaches to a plate on the carburetor using a custom mount made from aluminum plate and sheet metal. The thermocouple is mounted inside the engine to get stable temperature readings and reduce noisy readings from wind or other environmental conditions. Figure 7 is an image of the electronics inside the case, and Figure 8 is a picture of the dashboard during assembly.
+
+\image html electronics.png \"Figure 7: Electronics inside case\"
+
+\image html case_open.jpg \"Figure 8: Dashboard during assembly\"
+
+@section software Software
+
+The code is written in C++ and C and uses cooperative multitasking to switch between multiple tasks with each containing an FSM. Each task is implemented as a C++ class with a “run” function that switches to a case that is the state to run. The main loop repeatedly calls each task to run one state at a time before going to the next task. The motor, encoders, and thermocouple are controlled using pseudo-object-oriented programming “classes” written in C.
+
+The TFT display utilizes STM’s embedded multimedia capabilities along with TouchGFX’s image processing software. The image is displayed on the TFT screen using a 40-pin connector, which transmits power for the backlight, power, ground, four clock signals for synchronization, and 8 bits each for red, green, and blue color information. The parameters for horizontal synchronization, vertical synchronization, data enable, pixel clock, and other critical settings specified by the TFT screen’s manufacturer are configured within the LTDC multimedia controller.
+
+\image html LTDC.png \"Figure 9: Configuration of LTDC Multimedia\"
+
+Additionally, image processing was necessary due to the limited SDRAM available on the STM32F746ZGT MCU. To display an image, a framebuffer is created in the SDRAM large enough to hold 24 bits of color information for each pixel. For an 800x480 screen, this would require over 1MB of SDRAM. However, the MCU contains only 320KB of SDRAM, with not all of it available for use. This limitation made it impossible to display an RGB888 screen. To overcome this, we reduced the display resolution to 600x380 pixels and used the L8 color format. The L8 format uses 8 bits per pixel instead of 24 bits, significantly reducing the SDRAM requirements. The 8 bits correspond to an address in a 24-bit color lookup table, giving us 256 RGB888 colors to choose from, which fits within the available SDRAM. This conversion and display process is handled by STM’s DMA2D multimedia unit, which takes the L8 image format, processes it into RGB888, and displays it through the 40 dedicated TFT pins.
+
+\image html DMA2D.png \"Figure 10: Configuration of DMA2D Multimedia\"
+
+Image creation and animation are managed by TouchGFX. This software provides a UI for placing widgets, shapes, and text onto a canvas. It then generates code to fill out the framebuffer as needed. Although stock widgets, such as gauges, are already included, we decided to create our own custom containers acting as pseudo-widgets. Using a combination of progress bars and dynamic text, we built custom gauges. Three custom containers were created: speedGaugeContainer, tacGaugeContainer, and tempGaugeContainer. Each container displays the appropriate speed, engine RPM, or temperature after receiving input through the corresponding setValue function.
+
+\image html display.png \"Figure 11: Image of Display inside TouchGFX\"
+
+All animations are handled by the handleTickEvent function in screenView. This function is called continually at 60Hz and is responsible for animating all images displayed on the TFT screen. While specific functions for each widget are created elsewhere, their execution is managed within handleTickEvent.
+
+There are three tasks. Task 1 is used for automatic choke control, Task 2 is used for measurement taking, and Task 3 is used to update the display. Figures 9, 10, and 11 are the state transition diagrams for each of the tasks. A more detailed description of each task is available in the code documentation.
+
+\image html task1.png \"Figure 12: State transition diagram for Task 1\"
+
+\image html task2.png \"Figure 13: State transition diagram for Task 2\"
+
+\image html task2.png \"Figure 14: State transition diagram for Task 3\"
+
+@section modeling Modeling
+
+The choke control task calculates choke position from engine temperature by setting a minimum temperature to start controlling (fully choked), an operating temperature (no choke), and scaling the position linearly between the temperatures. The limits were found experimentally by measuring the engine temperature during use.
+
+Proportional and integral gains were found experimentally with the goal of minimizing steady state error. Response time is not a concern for relatively slow temperature-based control, and the high torque gearbox means the motor spins slow even at full speed.
+
+Sensor data does not need much processing to be used by the dashboard. The MAX6675 already performs cold-junction compensation and outputs the temperature at 12-Bit, 0.25 °C resolution over SPI. The encoder ticks are handled by MCU timer channels, and the encoder “class” contains simple calculations for position and speed. A rolling average is used to smooth out engine speed readings.
+
+@section future Summary and Future Improvements
+
+The GS425 Dashboard was largely a success. From the first revision, almost all the PCB functionality worked as intended. The display depicts important information to the rider and is fully customizable to show different data and gauge styles. The choke control code successfully reads temperature data from the thermocouple amplifier and sets the choke position accordingly.
+
+The choke shaft took more torque to turn than anticipated, and a stronger motor is needed to complete the hardware side of the control system. The current motor only uses 50 mA of the 1000 mA the motor driver can supply, so there is a lot of additional capacity for replacing the motor. A new motor mount and creative packaging will be needed.  For future iterations, the project would also benefit from additional storage to enhance the functionality of the display by being able to save higher quantities of more detailed frames.
+
+There are many components on the PCB itself that could use improvement. One major improvement would be to switch from using individual transistors to a transistor array, which will simplify the design and reduce the number of components. This would also come with making sure that there is no trickle drain into the SMD LED when the transistor is supposed to be off. Additionally, optimizing the trace lengths for the ZIF connector will improve signal integrity. Improvements are also needed to fix the issues with inductance triggering and the gear selector, which will enhance the overall performance of the system. Also to save cost and assembly time, a PCB design that uses only one side of the board would be a great improvement.
+
+Moving the Hall effect sensors to the wheel and engine itself will provide more accurate measurements, and using the 100-pin connector instead of the 144-pin version will help streamline the design. Adding external SDRAM will address memory limitations and help expand the display's capabilities. Implementing a double-buffer strategy will improve screen updates, reducing flickering. A potential upgrade to full RGB888 or RGB656 instead of L8 color format could enhance the display quality.
+
+Non-volatile storage should be configured for the odometer, and incorporating FreeRTOS will allow better task management for complex functionalities. Integrating buttons for UI navigation will make the system more user-friendly. Other useful features include an oil change light and longer connecting cables.
+
+Additionally, adding a clock with a low-power RTC, a supercapacitor or coin battery for power dips during engine startup. Utilizing the full screen area for display and being able to flash while fully assembled are also important improvements. Smaller, more efficient connectors would further streamline the design, and waterproofing the system will ensure durability under varying conditions. Vering away from a 3D printed structure, and full composite housing would improve weather resistance, thermal capacity, and overall feel.
+*/

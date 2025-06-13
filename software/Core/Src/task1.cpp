@@ -146,7 +146,7 @@ void TASK1::run(void)
 		enc_update(&enc_1);                        // read encoder
 		position_meas = enc_get_position(&enc_1);  // get current position
 		err = position_ref - position_meas;        // calculate position error
-		int_err += err * dt;                       // add integral error
+		int_err += err*dt;                         // add integral error
 		if (int_err > 130000) int_err = 130000;    // saturate integral error high
 		if (int_err < -130000) int_err = -130000;  // saturate integral error low
 		L = (int)((err * kp)+(int_err * ki));      // calculate duty cycle

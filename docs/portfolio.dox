@@ -27,9 +27,9 @@ The heart of the dashboard is a custom four-layer PCB controlled by an STM32F746
 
 The dashboard has an 800x480 pixel RBG TFT LCD display with a custom graphics design to display bike information. Stand-alone LEDs are used to indicate the status of additional information like the turn signals. The PCB has a motor driver to power a 5V DC motor with PWM used to adjust the choke during automatic control. The motor has a 1:298 gear ratio and maximum torque of 1.1 N-cm to hold the choke in place. See the Future Improvements section for a discussion on necessary motor improvements. Figures 5 and 6 are pictures of the choke control hardware showing the motor mount and belt system to turn the carburetor shaft.
 
-\image html choke_control_front.png \"Figure 5: Choke control hardware front\"
+\image html choke_control_front.jpg \"Figure 5: Choke control hardware front\"
 
-\image html choke_control_back.png \"Figure 6: Choke control hardware back\"
+\image html choke_control_back.jpg \"Figure 6: Choke control hardware back\"
 
 @subsection sensors Sensors
 
